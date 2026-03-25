@@ -1,4 +1,4 @@
-name: Validate HTML
+name: Build & Deploy
 
 on:
   push:
@@ -6,21 +6,51 @@ on:
   pull_request:
     branches: [master]
 
-jobs:
-  html-validate:
-    name: HTML Validation
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: npx html-validate index.html
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-  lighthouse:
-    name: Lighthouse Audit
+jobs:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy:
+    name: Deploy
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
+
+  lighthouse:
+    name: Lighthouse Audit
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
       - run: npm install -g @lhci/cli
-      - run: lhci autorun --collect.staticDistDir=. --collect.url=http://localhost/index.html --assert.preset=lighthouse:no-pwa --upload.target=temporary-public-storage
+      - run: lhci autorun --collect.staticDistDir=dist --upload.target=temporary-public-storage

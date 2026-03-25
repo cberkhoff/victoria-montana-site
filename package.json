@@ -1,0 +1,16 @@
+{
+  "name": "victoria-montana-site",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "validate": "html-validate index.html"
+  },
+  "devDependencies": {
+    "bulma": "^1.0.4",
+    "html-validate": "^10.11.2",
+    "sass": "^1.98.0",
+    "vite": "^8.0.2"
+  }
+}

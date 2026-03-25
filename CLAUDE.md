@@ -8,11 +8,21 @@ Single-page static website in **Spanish** for Victoria Montaña, a psychologist 
 
 ## Architecture
 
-- Single `index.html` — no build step, no npm
-- Bulma CSS (1.0.4) via CDN with SRI, overrides in `<style>` in `<head>`
-- Font: Inter via Google Fonts CDN
-- Hosted on GitHub Pages (public repo, custom domain)
+- `index.html` — entry point, markup only (no inline styles)
+- `src/styles.scss` — all custom CSS + Bulma import
+- `src/main.js` — Vite entry point (imports styles)
+- `public/` — static assets copied as-is to `dist/` (CNAME, logo, images)
+- Built with Vite, deployed via GitHub Actions to GitHub Pages (custom domain `victoriamontana.cl`)
 - Sensitive config (domain, DNS, infra) is stored in Claude Code memory, not here
+
+## Commands
+
+```bash
+npm run dev       # local dev server with hot reload
+npm run build     # production build → dist/
+npm run preview   # preview the production build
+npm run validate  # run html-validate on index.html
+```
 
 ## Color Palette
 
@@ -38,19 +48,16 @@ Preserve her tone and intent when editing copy:
 
 ## Workflow
 
-- Solo project — no PRs, no code review. Push directly to `master`.
-- Commit and push when changes are ready.
-
-## Validation
-
-- **Local hook** (automatic): `npx html-validate index.html` runs after every Edit/Write to `.html` files
-- **CI** (GitHub Actions): html-validate + Lighthouse audit on every push/PR
-- **Before pushing**: always run `npx html-validate index.html` and fix any errors — do not push code that fails validation
+- Solo project — push directly to `master`
+- Before pushing: `npm run validate` must pass
+- CI runs validate → build → deploy on every push to master
+- Lighthouse audit runs in CI for informational scores (non-blocking)
 
 ## Conventions
 
 - All content in Spanish (English version may come later)
-- All CSS in `<style>` in `<head>` — no external stylesheets
+- All CSS in `src/styles.scss` — no inline styles in HTML
+- Google Fonts: Inter loaded via CDN (SRI exempted inline — not possible with Google Fonts)
 - Tracking scripts (GA4, Meta Pixel) as placeholders with `TODO` comments
 - Cal.com for booking via iframe with `TODO` for real link
-- Images are placeholder `<div>` blocks until real photos arrive
+- Images in `public/assets/` — placeholder `<img>` tags until real photos arrive

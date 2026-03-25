@@ -1,0 +1,81 @@
+// ── Bulma ──────────────────────────────────────────────────────
+// Full import for now — switch to modular imports when optimizing
+@use "bulma";
+
+// ── Victoria Montaña brand palette ────────────────────────────
+// Dusty rose & warm cream — from the business card
+:root {
+  --primary:      #B5918B;  // Rosa empolvado, fondo principal
+  --primary-dark: #8C6B66;  // Rosa oscuro, sombras y hover
+  --accent:       #EBDCCC;  // Crema cálida, logo y textos
+  --bg-soft:      #F5EDE6;  // Crema suave, fondo de página
+  --text-dark:    #3D2B27;  // Marrón oscuro
+  --text-mid:     #7A6460;  // Marrón medio
+  --border-soft:  #D9C8C0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-soft);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.hello-card {
+  background: var(--primary);
+  border-radius: 16px;
+  padding: 3rem 3.5rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 8px 32px rgba(140, 107, 102, 0.2);
+  max-width: 520px;
+  text-align: center;
+  color: var(--accent);
+}
+
+.logo {
+  margin-bottom: 1rem;
+}
+
+.site-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--accent);
+  opacity: 0.9;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.contact-info {
+  font-size: 0.95rem;
+  color: var(--accent);
+  opacity: 0.85;
+  line-height: 2;
+  margin-bottom: 1.5rem;
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.construction-label {
+  color: var(--accent);
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
