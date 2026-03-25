@@ -4,46 +4,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Victoria Montaña** is a single-page static website for a psychologist (Victoria) offering 100% remote therapy sessions for adolescents and adults. The internal project name is "SitioBoa". The site is in **Spanish** — all copy, labels, CTAs, and placeholders must be in Spanish.
-
-Victoria is originally from Puerto Varas, Chile and now lives in Seattle. The visual identity draws from Puerto Varas: Lake Llanquihue blues, Osorno volcano greens, and warm colonial creams.
+Single-page static website in **Spanish** for Victoria Montaña, a psychologist offering 100% remote therapy for adolescents and adults. Visual identity inspired by Puerto Varas, Chile.
 
 ## Architecture
 
-- **Single file**: `index.html` — no build step, no bundler, no npm
-- **CSS framework**: Bulma via CDN (0.9.4), with custom overrides in a `<style>` tag in `<head>`
-- **Font**: Inter via Google Fonts CDN
-- **Deployment target**: GitHub Pages (static files only, no server-side dependencies)
+- Single `index.html` — no build step, no npm
+- Bulma CSS (0.9.4) via CDN, overrides in `<style>` in `<head>`
+- Font: Inter via Google Fonts CDN
+- Hosted on GitHub Pages (public repo, custom domain)
+- Sensitive config (domain, DNS, infra) is stored in Claude Code memory, not here
 
-## Color Palette (CSS Custom Properties)
+## Color Palette
 
 | Variable | Hex | Inspiration |
 |---|---|---|
-| `--primary` | `#2E7D8C` | Lago Llanquihue teal-blue |
+| `--primary` | `#2E7D8C` | Lago Llanquihue |
 | `--primary-dark` | `#1D5F6E` | Deep lake shadow |
-| `--accent` | `#4A7C59` | Osorno volcano forest green |
-| `--bg-soft` | `#F4F0E8` | Warm cream (German colonial houses) |
-| `--text-dark` | `#1C2B2E` | Dark charcoal |
-| `--text-mid` | `#4A6068` | Muted slate |
+| `--accent` | `#4A7C59` | Volcán Osorno forest |
+| `--bg-soft` | `#F4F0E8` | Colonial cream |
+| `--text-dark` | `#1C2B2E` | Charcoal |
+| `--text-mid` | `#4A6068` | Slate |
 | `--border-soft` | `#D6E4E8` | Soft border |
 
-## Key Content (Victoria's Own Words)
+## Victoria's Voice
 
-These are the practitioner's actual statements — preserve their voice and intent when editing copy:
+Preserve her tone and intent when editing copy:
 
 - **Audience**: adolescentes y adultos
 - **Sessions**: 100% remotas, flexibles, empáticas, enfocadas en lo que tú necesitas hoy
 - **Philosophy**: "La terapia es un trabajo en equipo. Yo aporto mi experiencia clínica y tú eres el experto en tu propia vida."
 - **Personal**: apasionada de la danza, actividades comunitarias y escolares
-- **First contact**: pre-entrevista gratuita — primera llamada para conocerse y organizar sesiones
-
-## Development
-
+- **First contact**: pre-entrevista gratuita — llamada para conocerse y organizar sesiones
 
 ## Conventions
 
-- All content in Spanish (a future English version may be added later, but not yet)
-- All CSS lives in the `<style>` tag inside `<head>` — no external stylesheet files
-- Placeholder tracking scripts (GA4, Meta Pixel) go in `<head>` with `TODO` comments marking where to insert real IDs
-- Cal.com is used for booking — embed via iframe with a `TODO` comment for the real Cal.com username/event slug
-- Images are placeholders (colored `<div>` blocks) until real photos are provided
+- All content in Spanish (English version may come later)
+- All CSS in `<style>` in `<head>` — no external stylesheets
+- Tracking scripts (GA4, Meta Pixel) as placeholders with `TODO` comments
+- Cal.com for booking via iframe with `TODO` for real link
+- Images are placeholder `<div>` blocks until real photos arrive
