@@ -18,13 +18,13 @@ Single-page static website in **Spanish** for Victoria Montaña, a psychologist 
 
 | Variable | Hex | Inspiration |
 |---|---|---|
-| `--primary` | `#2E7D8C` | Lago Llanquihue |
-| `--primary-dark` | `#1D5F6E` | Deep lake shadow |
-| `--accent` | `#4A7C59` | Volcán Osorno forest |
-| `--bg-soft` | `#F4F0E8` | Colonial cream |
-| `--text-dark` | `#1C2B2E` | Charcoal |
-| `--text-mid` | `#4A6068` | Slate |
-| `--border-soft` | `#D6E4E8` | Soft border |
+| `--primary` | `#B5918B` | Dusty rose (brand card background) |
+| `--primary-dark` | `#8C6B66` | Dark rose (shadows, hover) |
+| `--accent` | `#EBDCCC` | Warm cream (text, logo) |
+| `--bg-soft` | `#F5EDE6` | Soft cream (page background) |
+| `--text-dark` | `#3D2B27` | Dark brown |
+| `--text-mid` | `#7A6460` | Medium brown |
+| `--border-soft` | `#D9C8C0` | Soft border |
 
 ## Victoria's Voice
 

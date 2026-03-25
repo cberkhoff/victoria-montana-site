@@ -15,17 +15,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
   <style>
-    /* ── Puerto Varas color palette ─────────────────────────────
-       Lake Llanquihue blues, Osorno volcano greens, colonial cream
+    /* ── Victoria Montaña brand palette ──────────────────────────
+       Dusty rose & warm cream — from the business card
     ─────────────────────────────────────────────────────────── */
     :root {
-      --primary:      #2E7D8C;  /* Lago Llanquihue, teal profundo   */
-      --primary-dark: #1D5F6E;  /* Sombra del lago                  */
-      --accent:       #4A7C59;  /* Verde bosque, volcán Osorno       */
-      --bg-soft:      #F4F0E8;  /* Crema cálida, casas coloniales    */
-      --text-dark:    #1C2B2E;  /* Carbón oscuro                     */
-      --text-mid:     #4A6068;  /* Gris pizarra suave               */
-      --border-soft:  #D6E4E8;
+      --primary:      #B5918B;  /* Rosa empolvado, fondo principal   */
+      --primary-dark: #8C6B66;  /* Rosa oscuro, sombras y hover      */
+      --accent:       #EBDCCC;  /* Crema cálida, logo y textos       */
+      --bg-soft:      #F5EDE6;  /* Crema suave, fondo de página      */
+      --text-dark:    #3D2B27;  /* Marrón oscuro                     */
+      --text-mid:     #7A6460;  /* Marrón medio                      */
+      --border-soft:  #D9C8C0;
     }
 
     html { scroll-behavior: smooth; }
@@ -41,28 +41,47 @@
     }
 
     .hello-card {
-      background: white;
+      background: var(--primary);
       border-radius: 16px;
       padding: 3rem 3.5rem;
       border: 1px solid var(--border-soft);
-      box-shadow: 0 8px 32px rgba(46, 125, 140, 0.1);
+      box-shadow: 0 8px 32px rgba(140, 107, 102, 0.2);
       max-width: 520px;
       text-align: center;
+      color: var(--accent);
     }
 
     .site-name {
       font-size: 2.2rem;
       font-weight: 700;
       letter-spacing: -0.03em;
-      color: var(--primary-dark);
+      color: var(--accent);
       margin-bottom: 0.5rem;
     }
 
     .tagline {
       font-size: 1.05rem;
-      color: var(--text-mid);
+      color: var(--accent);
+      opacity: 0.9;
       line-height: 1.7;
       margin-bottom: 1.75rem;
+    }
+
+    .contact-info {
+      font-size: 0.95rem;
+      color: var(--accent);
+      opacity: 0.85;
+      line-height: 2;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
     }
 
     .color-swatches {
@@ -84,20 +103,17 @@
   <div class="hello-card">
     <h1 class="site-name">Victoria Montaña</h1>
     <p class="tagline">
-      Psicóloga online para adolescentes y adultos.<br>
-      Sesiones 100% remotas desde donde tú estés.
+      Psicóloga Clínica<br>
+      Atención Remota<br>
+      Adolescentes y Adultos
     </p>
-    <p class="has-text-weight-semibold" style="color: var(--primary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em;">
-      Sitio en construcción · Puerto Varas → Seattle
-    </p>
-    <!-- Palette preview -->
-    <div class="color-swatches">
-      <div class="swatch" style="background: var(--primary);" title="Lago Llanquihue"></div>
-      <div class="swatch" style="background: var(--primary-dark);" title="Sombra del lago"></div>
-      <div class="swatch" style="background: var(--accent);" title="Bosque volcán Osorno"></div>
-      <div class="swatch" style="background: var(--bg-soft); border: 1px solid var(--border-soft);" title="Crema colonial"></div>
-      <div class="swatch" style="background: var(--text-dark);" title="Texto oscuro"></div>
+    <div class="contact-info">
+      <p>📞 <a href="tel:+12069723929">(+1) 206 972 3929</a></p>
+      <p>✉️ <a href="mailto:contacto@victoriamontana.cl">contacto@victoriamontana.cl</a></p>
     </div>
+    <p style="color: var(--accent); font-size: 0.8rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.08em;">
+      Sitio en construcción
+    </p>
   </div>
 
 </body>
