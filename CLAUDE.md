@@ -48,6 +48,10 @@ npm run validate  # html-validate on index.html
 
 **Always show a summary of commits and changed files before pushing, and wait for user approval.** Do not push without confirmation.
 
+## Research Before Changes
+
+Before proposing any change that involves an external version, action tag, package, or API: research it first (WebSearch/WebFetch/docs), confirm it exists, then propose. Never guess version numbers or assume a "next version" exists.
+
 ## Color Palette
 
 | Variable | Hex | Inspiration |
