@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victoria Montaña — Psicóloga Online</title>
+  <meta name="description" content="Psicóloga online para adolescentes y adultos. Sesiones 100% remotas, flexibles y empáticas.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bulma CSS via CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <style>
+    /* ── Puerto Varas color palette ─────────────────────────────
+       Lake Llanquihue blues, Osorno volcano greens, colonial cream
+    ─────────────────────────────────────────────────────────── */
+    :root {
+      --primary:      #2E7D8C;  /* Lago Llanquihue, teal profundo   */
+      --primary-dark: #1D5F6E;  /* Sombra del lago                  */
+      --accent:       #4A7C59;  /* Verde bosque, volcán Osorno       */
+      --bg-soft:      #F4F0E8;  /* Crema cálida, casas coloniales    */
+      --text-dark:    #1C2B2E;  /* Carbón oscuro                     */
+      --text-mid:     #4A6068;  /* Gris pizarra suave               */
+      --border-soft:  #D6E4E8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-soft);
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hello-card {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem 3.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 8px 32px rgba(46, 125, 140, 0.1);
+      max-width: 520px;
+      text-align: center;
+    }
+
+    .site-name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+
+    .color-swatches {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hello-card">
+    <h1 class="site-name">Victoria Montaña</h1>
+    <p class="tagline">
+      Psicóloga online para adolescentes y adultos.<br>
+      Sesiones 100% remotas desde donde tú estés.
+    </p>
+    <p class="has-text-weight-semibold" style="color: var(--primary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em;">
+      Sitio en construcción · Puerto Varas → Seattle
+    </p>
+    <!-- Palette preview -->
+    <div class="color-swatches">
+      <div class="swatch" style="background: var(--primary);" title="Lago Llanquihue"></div>
+      <div class="swatch" style="background: var(--primary-dark);" title="Sombra del lago"></div>
+      <div class="swatch" style="background: var(--accent);" title="Bosque volcán Osorno"></div>
+      <div class="swatch" style="background: var(--bg-soft); border: 1px solid var(--border-soft);" title="Crema colonial"></div>
+      <div class="swatch" style="background: var(--text-dark);" title="Texto oscuro"></div>
+    </div>
+  </div>
+
+</body>
+</html>
