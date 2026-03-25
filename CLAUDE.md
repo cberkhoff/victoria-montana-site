@@ -9,7 +9,7 @@ Single-page static website in **Spanish** for Victoria Montaña, a psychologist 
 ## Architecture
 
 - Single `index.html` — no build step, no npm
-- Bulma CSS (0.9.4) via CDN, overrides in `<style>` in `<head>`
+- Bulma CSS (1.0.4) via CDN with SRI, overrides in `<style>` in `<head>`
 - Font: Inter via Google Fonts CDN
 - Hosted on GitHub Pages (public repo, custom domain)
 - Sensitive config (domain, DNS, infra) is stored in Claude Code memory, not here
@@ -40,6 +40,12 @@ Preserve her tone and intent when editing copy:
 
 - Solo project — no PRs, no code review. Push directly to `master`.
 - Commit and push when changes are ready.
+
+## Validation
+
+- **Local hook** (automatic): `npx html-validate index.html` runs after every Edit/Write to `.html` files
+- **CI** (GitHub Actions): html-validate + Lighthouse audit on every push/PR
+- **Before pushing**: always run `npx html-validate index.html` and fix any errors — do not push code that fails validation
 
 ## Conventions
 

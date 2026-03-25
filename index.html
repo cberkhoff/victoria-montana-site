@@ -6,13 +6,14 @@
   <title>Victoria Montaña — Psicóloga Online</title>
   <meta name="description" content="Psicóloga online para adolescentes y adultos. Sesiones 100% remotas, flexibles y empáticas.">
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Inter (SRI not possible — Google serves different CSS per browser) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- [html-validate-disable-next require-sri] -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Bulma CSS via CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" integrity="sha384-DCY3M8xLkMu6c9IKcKbe+jHKMjelnwC0p+SBaxfHxoBYZWdJF2X400UdBCgATtAB" crossorigin="anonymous">
 
   <style>
     /* ── Victoria Montaña brand palette ──────────────────────────
@@ -88,17 +89,12 @@
       text-decoration: underline;
     }
 
-    .color-swatches {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 1.5rem;
-    }
-
-    .swatch {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
+    .construction-label {
+      color: var(--accent);
+      font-size: 0.8rem;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
   </style>
 </head>
@@ -113,10 +109,10 @@
       Adolescentes y Adultos
     </p>
     <div class="contact-info">
-      <p>📞 <a href="tel:+12069723929">(+1) 206 972 3929</a></p>
-      <p>✉️ <a href="mailto:contacto@victoriamontana.cl">contacto@victoriamontana.cl</a></p>
+      <p><a href="tel:+12069723929">(+1)&nbsp;206&nbsp;972&nbsp;3929</a></p>
+      <p><a href="mailto:contacto@victoriamontana.cl">contacto@victoriamontana.cl</a></p>
     </div>
-    <p style="color: var(--accent); font-size: 0.8rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.08em;">
+    <p class="construction-label">
       Sitio en construcción
     </p>
   </div>
