@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#EBDCCC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="88" />
+
+  <!-- Mountain peaks forming VM monogram -->
+  <!-- V: left slope down to center, then up to right peak -->
+  <!-- M: three peaks across the top -->
+  <polyline points="
+    52,128
+    72,78
+    100,108
+    120,62
+    140,108
+    160,78
+    148,128
+  " />
+
+  <!-- Water reflection / wave below mountains -->
+  <path d="M 58,140 Q 78,132 100,140 Q 122,148 142,140" />
+</svg>
