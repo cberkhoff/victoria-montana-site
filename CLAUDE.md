@@ -8,30 +8,54 @@ Single-page static website in **Spanish** for Victoria Montaña, a psychologist 
 
 ## Architecture
 
-- `index.html` — entry point, markup only (no inline styles)
-- `src/styles.scss` — all custom CSS + Bulma import
-- `src/main.js` — Vite entry point (imports styles)
-- `public/` — static assets copied as-is to `dist/` (CNAME, logo, images)
-- Built with Vite, deployed via GitHub Actions to GitHub Pages (custom domain `victoriamontana.cl`)
-- Sensitive config (domain, DNS, infra) is stored in Claude Code memory, not here
+```
+index.html          ← markup only, Vite entry point
+src/
+  main.js           ← imports styles.scss (Vite entry)
+  styles.scss       ← all CSS + Bulma imported from source
+public/
+  CNAME             ← custom domain (copied to dist/ by Vite)
+  assets/           ← static assets (logo, images)
+dist/               ← build output (gitignored), deployed to Pages
+```
+
+Bulma is compiled from SCSS source — no CDN. Google Fonts (Inter) still loaded via CDN (SRI not possible with Google Fonts — exempted inline).
 
 ## Commands
 
 ```bash
-npm run dev       # local dev server with hot reload
+npm run dev       # local dev server with hot reload (http://localhost:5173)
 npm run build     # production build → dist/
-npm run preview   # preview the production build
-npm run validate  # run html-validate on index.html
+npm run preview   # preview the production build locally
+npm run validate  # html-validate on index.html
 ```
+
+## Dev Workflow (local)
+
+1. `npm run dev` for live editing with hot reload
+2. Hooks auto-run after every file edit:
+   - `.html` edits → `npm run validate`
+   - `.scss` / `.js` edits → `npm run build`
+3. Before pushing: confirm `npm run validate` and `npm run build` both pass
+
+## CI (GitHub Actions `.github/workflows/ci.yml`) — `master` branch
+
+1. **Build** — `npm ci` → `npm run validate` → `npm run build` → upload artifact
+2. **Deploy** — deploy artifact to GitHub Pages (only on push to master)
+3. **Lighthouse** — audit the built `dist/` (informational, non-blocking)
+
+## Git Push Protocol
+
+**Always show a summary of commits and changed files before pushing, and wait for user approval.** Do not push without confirmation.
 
 ## Color Palette
 
 | Variable | Hex | Inspiration |
 |---|---|---|
-| `--primary` | `#B5918B` | Dusty rose (brand card background) |
-| `--primary-dark` | `#8C6B66` | Dark rose (shadows, hover) |
-| `--accent` | `#EBDCCC` | Warm cream (text, logo) |
-| `--bg-soft` | `#F5EDE6` | Soft cream (page background) |
+| `--primary` | `#B5918B` | Dusty rose (brand card) |
+| `--primary-dark` | `#8C6B66` | Dark rose |
+| `--accent` | `#EBDCCC` | Warm cream |
+| `--bg-soft` | `#F5EDE6` | Soft cream page bg |
 | `--text-dark` | `#3D2B27` | Dark brown |
 | `--text-mid` | `#7A6460` | Medium brown |
 | `--border-soft` | `#D9C8C0` | Soft border |
@@ -46,18 +70,11 @@ Preserve her tone and intent when editing copy:
 - **Personal**: apasionada de la danza, actividades comunitarias y escolares
 - **First contact**: pre-entrevista gratuita — llamada para conocerse y organizar sesiones
 
-## Workflow
-
-- Solo project — push directly to `master`
-- Before pushing: `npm run validate` must pass
-- CI runs validate → build → deploy on every push to master
-- Lighthouse audit runs in CI for informational scores (non-blocking)
-
 ## Conventions
 
 - All content in Spanish (English version may come later)
 - All CSS in `src/styles.scss` — no inline styles in HTML
-- Google Fonts: Inter loaded via CDN (SRI exempted inline — not possible with Google Fonts)
 - Tracking scripts (GA4, Meta Pixel) as placeholders with `TODO` comments
 - Cal.com for booking via iframe with `TODO` for real link
-- Images in `public/assets/` — placeholder `<img>` tags until real photos arrive
+- Images in `public/assets/` — `<img>` tags with real src paths
+- Sensitive config (domain, DNS, infra) stored in Claude Code memory, not here

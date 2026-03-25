@@ -9,6 +9,12 @@
             "command": "jq -r '.tool_input.file_path // .tool_response.filePath' | { read -r f; echo \"$f\" | grep -qE '\\.html$' && npm run validate 2>&1 || true; }",
             "timeout": 30,
             "statusMessage": "Validating HTML..."
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // .tool_response.filePath' | { read -r f; echo \"$f\" | grep -qE '\\.(scss|js)$' && npm run build 2>&1 || true; }",
+            "timeout": 60,
+            "statusMessage": "Building..."
           }
         ]
       }
