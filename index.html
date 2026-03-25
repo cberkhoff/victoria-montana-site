@@ -4,34 +4,237 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Victoria Montaña — Psicóloga Online</title>
-  <meta name="description" content="Psicóloga online para adolescentes y adultos. Sesiones 100% remotas, flexibles y empáticas.">
+  <meta name="description" content="Psicóloga clínica online para adolescentes y adultos. Sesiones 100% remotas, flexibles y empáticas. Pre-entrevista gratuita.">
 
   <!-- Google Fonts: Inter (SRI not possible — Google serves different CSS per browser) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- [html-validate-disable-next require-sri] -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <script type="module" src="/src/main.js"></script>
 </head>
 <body>
 
-  <div class="hello-card">
-    <img src="/assets/logo-vm.svg" alt="Victoria Montaña logo" class="logo" width="120" height="120">
-    <h1 class="site-name">Victoria Montaña</h1>
-    <p class="tagline">
-      Psicóloga Clínica<br>
-      Atención Remota<br>
-      Adolescentes y Adultos
-    </p>
-    <div class="contact-info">
-      <p><a href="tel:+12069723929">(+1)&nbsp;206&nbsp;972&nbsp;3929</a></p>
-      <p><a href="mailto:contacto@victoriamontana.cl">contacto@victoriamontana.cl</a></p>
+  <!-- ── NAVBAR ────────────────────────────────────────────────── -->
+  <nav class="vm-nav" aria-label="navegación principal">
+    <div class="vm-nav__container">
+      <a class="vm-nav__brand" href="#inicio" aria-label="Victoria Montaña — inicio">
+        <span class="vm-nav__name">Victoria Montaña</span>
+      </a>
+      <button class="vm-nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="vm-menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="vm-nav__menu" id="vm-menu">
+        <a class="vm-nav__link" href="#sobre-mi">Sobre mí</a>
+        <a class="vm-nav__link" href="#servicios">Servicios</a>
+        <a class="vm-nav__link" href="#como-trabajo">Mi enfoque</a>
+        <a class="vm-nav__link vm-nav__cta" href="#agendar">Agendar consulta</a>
+      </div>
     </div>
-    <p class="construction-label">
-      Sitio en construcción
-    </p>
-  </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section id="inicio" class="vm-hero">
+    <div class="vm-hero__bg" aria-hidden="true"></div>
+    <div class="vm-hero__container">
+      <div class="vm-hero__content">
+        <img src="/assets/logo.webp" alt="Victoria Montaña" class="vm-hero__logo">
+        <p class="vm-label vm-label--light">Psicóloga Clínica &middot; Atención 100% Remota</p>
+        <h1 class="vm-hero__title">Un espacio seguro<br>para ti</h1>
+        <p class="vm-hero__sub">Acompañamiento terapéutico para adolescentes y adultos.<br>Flexible, empático, centrado en lo que necesitas hoy.</p>
+        <div class="vm-hero__actions">
+          <a href="https://cal.com/vmontana" class="vm-btn vm-btn--accent" data-cal-link="vmontana" data-cal-namespace="vmontana">Pre-entrevista gratuita</a>
+          <a href="#sobre-mi" class="vm-btn vm-btn--ghost">Conoce a Victoria</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOBRE MÍ ──────────────────────────────────────────────── -->
+  <section id="sobre-mi" class="vm-section vm-section--light">
+    <div class="vm-container">
+      <div class="vm-about">
+        <div class="vm-about__photo-wrap">
+          <img class="vm-about__photo" src="/assets/victoria.png" alt="Victoria Montaña, Psicóloga Clínica" width="480" height="480">
+        </div>
+        <div class="vm-about__body">
+          <p class="vm-label">Sobre mí</p>
+          <h2 class="vm-section__title">Hola, soy Victoria Montaña</h2>
+          <p class="vm-text">Soy psicóloga clínica apasionada por acompañar a las personas en sus procesos de cambio y crecimiento personal. Trabajo con adolescentes y adultos de forma 100% remota, adaptando cada proceso a tus necesidades y tiempos.</p>
+          <p class="vm-text vm-text--quote">"La terapia es un trabajo en equipo. Yo aporto mi experiencia clínica y tú eres el experto en tu propia vida."</p>
+          <p class="vm-text">Fuera de consulta, disfruto de la danza, las actividades comunitarias y el trabajo con jóvenes. Esa misma energía y presencia es la que traigo a cada sesión.</p>
+          <a href="https://cal.com/vmontana" class="vm-btn vm-btn--primary vm-mt" data-cal-link="vmontana" data-cal-namespace="vmontana">Agenda tu consulta</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICIOS ─────────────────────────────────────────────── -->
+  <section id="servicios" class="vm-section vm-section--warm">
+    <div class="vm-container">
+      <div class="vm-section__header">
+        <p class="vm-label vm-label--centered">Servicios</p>
+        <h2 class="vm-section__title vm-section__title--centered">¿En qué puedo ayudarte?</h2>
+        <p class="vm-section__sub">Trabajo con una amplia variedad de motivos de consulta, siempre con un enfoque personalizado.</p>
+      </div>
+      <div class="vm-cards">
+        <div class="vm-card">
+          <div class="vm-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 class="vm-card__title">Ansiedad y estrés</h3>
+          <p class="vm-card__body">Ataques de pánico, preocupación constante, estrés laboral o académico, perfeccionismo.</p>
+        </div>
+        <div class="vm-card">
+          <div class="vm-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="vm-card__title">Estado de ánimo</h3>
+          <p class="vm-card__body">Tristeza, desmotivación, pérdida de interés, vacío emocional, episodios depresivos.</p>
+        </div>
+        <div class="vm-card">
+          <div class="vm-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <h3 class="vm-card__title">Adolescentes</h3>
+          <p class="vm-card__body">Identidad, relaciones, presión académica, autoestima, transiciones y cambios de vida.</p>
+        </div>
+        <div class="vm-card">
+          <div class="vm-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="vm-card__title">Adultos</h3>
+          <p class="vm-card__body">Autoestima, relaciones, trabajo, duelos, cambios vitales, crisis existenciales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CÓMO TRABAJO ──────────────────────────────────────────── -->
+  <section id="como-trabajo" class="vm-section vm-section--light">
+    <div class="vm-container">
+      <div class="vm-section__header">
+        <p class="vm-label vm-label--centered">Mi enfoque</p>
+        <h2 class="vm-section__title vm-section__title--centered">Cómo trabajo</h2>
+      </div>
+      <div class="vm-methods">
+        <div class="vm-method">
+          <div class="vm-method__num" aria-hidden="true">01</div>
+          <h3 class="vm-method__title">Escucha activa</h3>
+          <p class="vm-method__body">Cada persona es única. Comienzo por comprender tu historia y lo que te trajo aquí, sin juicio y con plena atención.</p>
+        </div>
+        <div class="vm-method">
+          <div class="vm-method__num" aria-hidden="true">02</div>
+          <h3 class="vm-method__title">Enfoque personalizado</h3>
+          <p class="vm-method__body">No hay recetas universales. Adapto las herramientas terapéuticas a lo que tú necesitas en este momento de tu vida.</p>
+        </div>
+        <div class="vm-method">
+          <div class="vm-method__num" aria-hidden="true">03</div>
+          <h3 class="vm-method__title">Trabajo en equipo</h3>
+          <p class="vm-method__body">La terapia es colaborativa. Tú eres el experto en tu propia vida; yo aporto mi experiencia clínica para acompañarte.</p>
+        </div>
+        <div class="vm-method">
+          <div class="vm-method__num" aria-hidden="true">04</div>
+          <h3 class="vm-method__title">100% remoto</h3>
+          <p class="vm-method__body">Sesiones por videollamada desde donde estés. Sin traslados, con horarios flexibles que se adaptan a tu rutina.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AGENDAR ───────────────────────────────────────────────── -->
+  <section id="agendar" class="vm-section vm-section--primary">
+    <div class="vm-container">
+      <div class="vm-section__header">
+        <p class="vm-label vm-label--centered vm-label--light">Comencemos</p>
+        <h2 class="vm-section__title vm-section__title--centered vm-section__title--light">¿Cómo agendamos?</h2>
+      </div>
+      <div class="vm-steps">
+        <div class="vm-step">
+          <div class="vm-step__num" aria-hidden="true">1</div>
+          <h3 class="vm-step__title">Pre-entrevista gratuita</h3>
+          <p class="vm-step__body">Conversamos 15 minutos para conocernos y ver si somos un buen match terapéutico. Sin compromiso.</p>
+        </div>
+        <div class="vm-step__arrow" aria-hidden="true">→</div>
+        <div class="vm-step">
+          <div class="vm-step__num" aria-hidden="true">2</div>
+          <h3 class="vm-step__title">Primera sesión</h3>
+          <p class="vm-step__body">Profundizamos en tu historia y establecemos juntos los objetivos del proceso terapéutico.</p>
+        </div>
+        <div class="vm-step__arrow" aria-hidden="true">→</div>
+        <div class="vm-step">
+          <div class="vm-step__num" aria-hidden="true">3</div>
+          <h3 class="vm-step__title">Tu proceso</h3>
+          <p class="vm-step__body">Trabajamos a tu ritmo, con sesiones regulares y total flexibilidad horaria.</p>
+        </div>
+      </div>
+      <div class="vm-agendar__cta">
+        <a href="https://cal.com/vmontana" class="vm-btn vm-btn--accent vm-btn--large" data-cal-link="vmontana" data-cal-namespace="vmontana">Reservar pre-entrevista gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACTO ──────────────────────────────────────────────── -->
+  <section id="contacto" class="vm-section vm-section--light">
+    <div class="vm-container">
+      <div class="vm-contact">
+        <div class="vm-contact__body">
+          <p class="vm-label">Contacto</p>
+          <h2 class="vm-section__title">¿Tienes alguna pregunta?</h2>
+          <p class="vm-text">No dudes en escribirme o llamarme. Respondo a la brevedad y con gusto resuelvo tus dudas antes de agendar.</p>
+          <div class="vm-contact__items">
+            <a class="vm-contact__item" href="tel:+12069723929">
+              <span class="vm-contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 2.09 4.18 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>(+1)&nbsp;206&nbsp;972&nbsp;3929</span>
+            </a>
+            <a class="vm-contact__item" href="mailto:contacto@victoriamontana.cl">
+              <span class="vm-contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <span>contacto@victoriamontana.cl</span>
+            </a>
+          </div>
+        </div>
+        <div class="vm-contact__cta-box">
+          <h3 class="vm-contact__cta-title">Pre-entrevista gratuita</h3>
+          <p class="vm-contact__cta-sub">15 minutos para conocernos,<br>sin compromiso.</p>
+          <a href="https://cal.com/vmontana" class="vm-btn vm-btn--primary" data-cal-link="vmontana" data-cal-namespace="vmontana">Reservar hora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="vm-footer">
+    <div class="vm-container">
+      <div class="vm-footer__inner">
+        <div class="vm-footer__brand">
+          <p class="vm-footer__brand-name">Victoria Montaña</p>
+          <p class="vm-footer__brand-sub">Psicóloga Clínica</p>
+        </div>
+        <nav class="vm-footer__links" aria-label="pie de página">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#como-trabajo">Mi enfoque</a>
+          <a href="#agendar">Agendar</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="vm-footer__contact">
+          <a href="tel:+12069723929">(+1)&nbsp;206&nbsp;972&nbsp;3929</a>
+          <a href="mailto:contacto@victoriamontana.cl">contacto@victoriamontana.cl</a>
+        </div>
+      </div>
+      <div class="vm-footer__bottom">
+        <p>&copy; 2025 Victoria Montaña. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TODO: Google Analytics GA4 placeholder -->
+  <!-- TODO: Meta Pixel placeholder -->
 
 </body>
 </html>

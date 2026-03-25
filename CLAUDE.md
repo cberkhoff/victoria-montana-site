@@ -32,7 +32,8 @@ npm run validate  # html-validate on index.html
 
 ## Dev Workflow (local)
 
-1. `npm run dev` for live editing with hot reload
+1. **Claude starts `npm run dev` in the background** at the beginning of every editing session, then confirms the URL from the output (default: `http://localhost:5173`, falls back to `5174` if busy).
+   - Vite is configured with `usePolling: true` in `vite.config.js` — required because the project lives on a mounted drive (`/mnt/`). Without polling, Vite crashes with `EMFILE: too many open files`.
 2. Hooks auto-run after every file edit:
    - `.html` edits → `npm run validate`
    - `.scss` / `.js` edits → `npm run build`

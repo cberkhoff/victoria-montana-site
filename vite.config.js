@@ -5,4 +5,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  server: {
+    watch: {
+      // Use polling for mounted/network drives (avoids EMFILE on /mnt/*)
+      usePolling: true,
+      interval: 300,
+    },
+  },
 })
