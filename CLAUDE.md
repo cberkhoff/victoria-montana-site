@@ -36,6 +36,11 @@ Preserve her tone and intent when editing copy:
 - **Personal**: apasionada de la danza, actividades comunitarias y escolares
 - **First contact**: pre-entrevista gratuita — llamada para conocerse y organizar sesiones
 
+## Workflow
+
+- Solo project — no PRs, no code review. Push directly to `master`.
+- Commit and push when changes are ready.
+
 ## Conventions
 
 - All content in Spanish (English version may come later)
