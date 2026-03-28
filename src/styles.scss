@@ -336,7 +336,7 @@ img { display: block; max-width: 100%; }
 // ── SOBRE MÍ ──────────────────────────────────────────────────
 .vm-about {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 0.6fr 1.4fr;
   gap: 4rem;
   align-items: center;
 }
@@ -694,7 +694,7 @@ img { display: block; max-width: 100%; }
     gap: 2rem;
   }
 
-  .vm-about__photo-wrap { max-width: 340px; margin: 0 auto; }
+  .vm-about__photo-wrap { max-width: 260px; margin: 0 auto; }
 
   .vm-steps {
     flex-direction: column;
