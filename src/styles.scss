@@ -277,12 +277,11 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(160deg,
-      rgba(61, 43, 39, 0.62) 0%,
-      rgba(140, 107, 102, 0.42) 60%,
-      rgba(181, 145, 139, 0.28) 100%
+    radial-gradient(ellipse at center,
+      transparent 30%,
+      rgba(0, 0, 0, 0.45) 100%
     ),
-    url('/assets/banner-volcan-osorno.jpg.webp') center center / cover no-repeat;
+    url('/assets/saltos.webp') center center / cover no-repeat;
 }
 
 .vm-hero__container {
@@ -304,8 +303,7 @@ img { display: block; max-width: 100%; }
   width: 110px;
   height: auto;
   margin: 0 auto 1.5rem;
-  // Slightly brighten so it reads on the dark overlay
-  filter: brightness(1.15);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
 .vm-hero__title {
@@ -315,13 +313,17 @@ img { display: block; max-width: 100%; }
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin: 0.5rem 0 1rem;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.55),
+    0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .vm-hero__sub {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.9);
   line-height: 1.65;
   margin-bottom: 2.25rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .vm-hero__actions {
