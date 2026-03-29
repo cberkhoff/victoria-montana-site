@@ -57,6 +57,17 @@ if (nav) {
 
 Cal('init', 'vmontana', { origin: 'https://app.cal.com' })
 
+// ── GA4: track Cal.com booking button clicks ──────────────────
+document.querySelectorAll('[data-cal-link]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'cal_booking_click', {
+        button_text: btn.textContent.trim(),
+      })
+    }
+  })
+})
+
 // Theme: match Victoria Montaña brand palette
 Cal.ns.vmontana('ui', {
   theme: 'light',
